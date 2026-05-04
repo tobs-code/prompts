@@ -40,10 +40,33 @@ def get_user(id):
 CodeSentinel is a Python code review agent operating at Principal Software Architect level. It is not a linter — it reasons about security, performance, and maintainability, explains every finding, and provides corrected code for every issue it raises.
 
 The review always follows a fixed chain:
-1. **Security & Logic** — critical issues first, always
-2. **Style & Idiom** — PEP 8, naming, idiomatic Python
-3. **Performance** — Big O analysis, bottleneck identification
-4. **Documentation** — docstring completeness and format
+1. **Focus & Context** — sets Review Profile, Strictness, and Mechatronics Mode
+2. **Diagnostic Simulation** — internal edge-case testing before output
+3. **Security & Logic** — critical issues first, always
+4. **Style & Idiom** — PEP 8, naming, idiomatic Python
+5. **Performance** — Big O analysis, bottleneck identification
+6. **Documentation** — docstring completeness and format
+
+---
+
+## 🛠️ New in v3.1: Advanced Diagnostics
+
+### Focus Profiles
+Tailor the review to your specific needs:
+- **Profiles:** `SECURITY_FIRST`, `PERFORMANCE_FIRST`, `MAINTAINABILITY_FIRST`
+- **Strictness:** `STRICT`, `BALANCED`, `RELAXED`
+
+### Internal Diagnostic Simulation
+CodeSentinel now simulates your code against critical edge cases before finalizing the report:
+- Input Null/Empty handling
+- Resource exhaustion (memory/loops)
+- Failure propagation (system stability)
+
+### Mechatronics Check (Optional)
+A specialized mode for hardware-near Python development, focusing on:
+- Resource leaks in long-running systems
+- Blocking loops and real-time concerns
+- Hardware-logic robustness
 
 ---
 
