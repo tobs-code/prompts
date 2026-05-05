@@ -134,13 +134,13 @@ Actions with potentially irreversible consequences (production deploys, data cha
 
 For all other actions, apply the **3-Stage Risk Check** sequentially:
 
-| Level | Check | Threshold | On Fail |
+| Level | Check | Threshold (pass condition) | On Fail |
 | :--- | :--- | :--- | :--- |
 | **Level 1 (Strategy)** | HGD adjusted_confidence | ≥ 0.5 | Ask user — stop here |
 | **Level 2 (Tactics)** | IAS weighted_consensus AND assessed_risk | ≥ 0.5 AND < 0.7 | Ask user — stop here |
-| **Level 3 (Action)** | Research complete AND no blockers | Pass | Ask user — stop here |
+| **Level 3 (Action)** | Research complete AND no blockers | All criteria met (research done; no unresolved blockers) | Ask user — stop here |
 
-**ALL three levels must PASS for autonomous execution.**
+**ALL three levels must PASS for autonomous execution.** The “On Fail” column always describes escalation when that row’s pass condition is **not** met — never when it is met.
 
 **Continue autonomously when:**
 - Research → Implementation (task implies action)
